@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lbrty — Digital Strategy & Human First Design</title>
+  <meta name="description" content="I help companies define and design liberating digital products. Stefano Toledo — Product Designer." />
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --muted: #141417;
+      --card: #121216;
+      --text: #ececf0;
+      --text-dim: #b9bbc7;
+      --accent: #9ef01a;
+      --accent-2: #6be3ff;
+      --maxw: 1200px;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.3);
+    }
+    html,body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(1200px 800px at 85% -10%, rgba(107, 227, 255, 0.07), transparent 60%),
+        radial-gradient(900px 600px at -10% 30%, rgba(158, 240, 26, 0.05), transparent 60%),
+        radial-gradient(700px 500px at 110% 80%, rgba(107, 227, 255, 0.045), transparent 60%);
+      color: var(--text);
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; image-rendering: -webkit-optimize-contrast; }
+    .container { width: min(100% - 32px, var(--maxw)); margin-inline: auto; }
+
+    header { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(150%) blur(8px); background: color-mix(in oklab, var(--bg) 88%, transparent); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .3px; }
+    .logo { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+    .menu { display: flex; gap: 18px; align-items: center; }
+    .menu a { color: var(--text-dim); font-weight: 600; }
+    .menu a:hover { color: var(--text); }
+    .cta { padding: 10px 14px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #08100a; font-weight: 700; box-shadow: var(--shadow); }
+
+    .hero { padding: 84px 0 32px; }
+    .badge { display: inline-flex; gap: 10px; align-items: center; padding: 8px 12px; border-radius: 999px; background: #141417; color: var(--text-dim); font-weight: 600; border: 1px solid rgba(255,255,255,.06); }
+    .badge .dot { width: 8px; height: 8px; background: #27e78c; border-radius: 999px; box-shadow: 0 0 10px #27e78c; }
+    .hero-content { display: flex; flex-direction: column; gap: 24px; }
+    .big { font-size: clamp(32px, 5vw, 56px); line-height: 1.1; letter-spacing: -0.02em; margin: 18px 0 10px; }
+    .sub { color: var(--text-dim); font-size: clamp(16px, 2vw, 20px); }
+
+    /* Fullwidth Lottie just beneath hero text */
+    .lottie-wrapper { width: 100vw; margin-left: calc(50% - 50vw); aspect-ratio: 16/9; overflow: hidden; border: 0; background: #0b0b0c; }
+
+    .logos { padding: 12px 0 48px; }
+    .logos h3 { color: var(--text-dim); font-weight: 700; font-size: 14px; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 18px; }
+    .logo-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+    .logo-card { background: var(--card); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; padding: 16px; display: grid; place-items: center; min-height: 72px; color: var(--text-dim); font-weight: 600; }
+
+    section { padding: 56px 0; }
+    .section-title { font-size: clamp(24px, 3.6vw, 34px); margin: 0 0 16px; }
+    .work-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 22px; }
+    .card { grid-column: span 6; border-radius: var(--radius); overflow: hidden; background: var(--card); border: 1px solid rgba(255,255,255,.06); display: grid; }
+    .card .thumb { position: relative; aspect-ratio: 16/9; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0)); overflow: hidden; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .card .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card .body { padding: 18px; display: grid; gap: 6px; min-height: 120px; align-content: start; }
+    .card .body h4 { margin: 0; font-size: 20px; }
+    .card .body p { margin: 0; color: var(--text-dim); }
+    .card a { padding: 12px 14px; margin: 14px 18px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.12); text-align: center; font-weight: 700; color: var(--text); }
+    .card a:hover { background: rgba(255,255,255,.06); }
+
+    .features { display: grid; grid-template-columns: repeat(12, 1fr); gap: 22px; }
+    .feat { grid-column: span 3; background: var(--card); border: 1px solid rgba(255,255,255,.06); border-radius: 16px; padding: 20px; }
+    .feat h4 { margin: 0 0 6px; }
+    .feat p { margin: 0; color: var(--text-dim); }
+
+    .cta-block { background: linear-gradient(135deg, rgba(158, 240, 26, .08), rgba(107, 227, 255, .08)); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; padding: 28px; display: grid; gap: 10px; }
+
+    footer { padding: 28px 0 56px; color: var(--text-dim); }
+
+    @media (max-width: 980px) {
+      .logo-grid { grid-template-columns: repeat(3, 1fr); }
+      .work-grid .card { grid-column: span 12; }
+      .features .feat { grid-column: span 6; }
+    }
+    @media (max-width: 640px) {
+      .menu { display: none; }
+      .features .feat { grid-column: span 12; }
+      .logo-card { min-height: 56px; }
+    }
+      /* Fullwidth marquee */
+    .logos-marquee { width: 100vw; margin-left: calc(50% - 50vw); overflow: hidden; border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); background: color-mix(in oklab, var(--bg) 94%, transparent); }
+    .logos-marquee .rail { display: inline-flex; gap: 18px; padding: 16px 24px; will-change: transform; backface-visibility: hidden; transform: translate3d(0,0,0); contain: layout paint; }
+    .logo-pill { flex: 0 0 auto; height: 64px; min-width: 160px; display: grid; place-items: center; padding: 12px 16px; border-radius: 14px; background: var(--card); border: 1px solid rgba(255,255,255,.06); }
+    .logo-pill img { display:block; height: 32px; max-height: 32px; width: auto; opacity: .9; }
+      /* Password gate */
+    .gate-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:1000}
+    .gate{width:min(92vw,440px);background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5);padding:22px;display:grid;gap:12px}
+    .gate h3{margin:0;font-size:20px}
+    .gate p{margin:0;color:var(--text-dim)}
+    .gate .row{display:grid;gap:10px}
+    .gate input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#121216;color:var(--text)}
+    .gate .actions{display:flex;gap:10px;justify-content:flex-end}
+    .btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.16);background:#1a1a1e;color:var(--text);cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#08100a;font-weight:700}
+    .gate .error{display:none;color:#ff6b6b;font-weight:600}
+  </style>
+  <script defer src="https://unpkg.com/lottie-web/build/player/lottie.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <a href="#top" aria-label="Lbrty — home">Lbrty</a>
+      </div>
+      <nav class="menu" aria-label="Hoofdmenu">
+        <a href="#about">About me</a>
+        <a href="#work">Proof of work</a>
+        <a href="#services">What you’ll get</a>
+        <a class="cta" href="#contact">Say Hello</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top" class="hero">
+    <div class="container hero-content">
+      <div>
+        <div class="badge"><span class="dot"></span> Available for new UX design inquiries</div>
+        <h1 class="big">I help companies define and design liberating digital products</h1>
+        <p class="sub">Stefano Toledo — <strong>Product Designer</strong></p>
+      </div>
+    </div>
+    <!-- Fullwidth Lottie directly under the hero text -->
+    <div class="lottie-wrapper" data-lottie="assets/lottie/hero.json" aria-label="Hero animation"></div>
+  </main>
+
+  <!-- Logos -->
+  <section class="logos" aria-labelledby="logos-title">
+    <div class="container">
+      <h3 id="logos-title">Worked for global companies & great consumer brands before</h3>
+    </div>
+
+    <!-- Fullwidth marquee that scrolls horizontally based on vertical scroll -->
+    <div class="logos-marquee" aria-label="Partner logos">
+      <div class="rail railA">
+        <div class="logo-pill"><img alt="logo 1" src="assets/logos/logo1.svg"></div>
+        <div class="logo-pill"><img alt="logo 2" src="assets/logos/logo2.svg"></div>
+        <div class="logo-pill"><img alt="logo 3" src="assets/logos/logo3.svg"></div>
+        <div class="logo-pill"><img alt="logo 4" src="assets/logos/logo4.svg"></div>
+        <div class="logo-pill"><img alt="logo 5" src="assets/logos/logo5.svg"></div>
+        <div class="logo-pill"><img alt="logo 6" src="assets/logos/logo6.svg"></div>
+        <div class="logo-pill"><img alt="logo 7" src="assets/logos/logo7.svg"></div>
+        <div class="logo-pill"><img alt="logo 8" src="assets/logos/logo8.svg"></div>
+        <div class="logo-pill"><img alt="logo 9" src="assets/logos/logo9.svg"></div>
+        <div class="logo-pill"><img alt="logo 10" src="assets/logos/logo10.svg"></div>
+        <div class="logo-pill"><img alt="logo 11" src="assets/logos/logo11.svg"></div>
+        <div class="logo-pill"><img alt="logo 12" src="assets/logos/logo12.svg"></div>
+      </div>
+      <div class="rail railB" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section id="work" class="container" aria-labelledby="work-title">
+    <h2 class="section-title" id="work-title">Proof of work</h2>
+    <article class="work-grid">
+      <div class="card">
+        <div class="thumb"><img src="assets/work/spruit.jpg" alt="Spruit case"/></div>
+        <div class="body">
+          <h4>Spruit</h4>
+          <p>Fresh baby and toddler meals as a subscription, delivered to your door</p>
+        </div>
+        <a href="cases/spruit.html" class="protected-link" data-title="Spruit">Bekijk case</a
+      </div>
+      <div class="card">
+        <div class="thumb"><img src="assets/work/rfh.jpg" alt="Royal Flora Holland case"/></div>
+        <div class="body">
+          <h4>Royal Flora Holland</h4>
+          <p>Creating customer journey insights and delivering digital consultancy</p>
+        </div>
+        <a href="cases/royal-flora-holland.html" class="protected-link" data-title="Royal Flora Holland">Bekijk case</a
+      </div>
+      <div class="card">
+        <div class="thumb"><img src="assets/work/nefit.jpg" alt="Nefit Bosch case"/></div>
+        <div class="body">
+          <h4>Nefit Bosch</h4>
+          <p>Where B2C & B2B come together for a sustainable future</p>
+        </div>
+        <a href="cases/nefit-bosch.html" class="protected-link" data-title="Nefit Bosch">Bekijk case</a
+      </div>
+      <div class="card">
+        <div class="thumb"><img src="assets/work/gitp.jpg" alt="GITP case"/></div>
+        <div class="body">
+          <h4>GITP</h4>
+          <p>A website that promotes digital and personalized HR solutions</p>
+        </div>
+        <a href="cases/gitp.html" class="protected-link" data-title="GITP">Bekijk case</a
+      </div>
+      <div class="card">
+        <div class="thumb"><img src="assets/work/bna.jpg" alt="BNA case"/></div>
+        <div class="body">
+          <h4>BNA</h4>
+          <p>Showcasing architecture with a smart member environment for sharing knowledge and creating connections</p>
+        </div>
+        <a href="cases/bna.html" class="protected-link" data-title="BNA">Bekijk case</a
+      </div>
+      <div class="card">
+        <div class="thumb"><img src="assets/work/extra.jpg" alt="Extra project"/></div>
+        <div class="body">
+          <h4>Extra project</h4>
+          <p>Short description of the impact and outcome</p>
+        </div>
+        <a href="cases/extra.html" class="protected-link" data-title="Extra project">Bekijk case</a
+      </div>
+    </article>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="container" aria-labelledby="services-title">
+    <h2 class="section-title" id="services-title">What you’ll get</h2>
+    <div class="features">
+      <div class="feat">
+        <h4>Digital Strategy</h4>
+        <p>Clear & measurable goals via an agile approach</p>
+      </div>
+      <div class="feat">
+        <h4>User Centered Design</h4>
+        <p>Functional & easy to use interfaces aligned with business requirements</p>
+      </div>
+      <div class="feat">
+        <h4>Visual Art Direction</h4>
+        <p>Unique & creative design to set you apart from your competition</p>
+      </div>
+      <div class="feat">
+        <h4>Content Development</h4>
+        <p>The right type of content to engage your targetgroup</p>
+      </div>
+    </div>
+
+    <div class="cta-block" style="margin-top:24px">
+      <h3 style="margin:0 0 6px">Want to create real value?</h3>
+      <p style="margin:0 0 8px; color:var(--text-dim)">Serving your customers in the most relevant and valuable way possible should be your ultimate goal, when running an online business. That's also my view on great user experience. It’s not design, it’s not a strategy; it’s more how to look at a problem from an end-user’s perspective.</p>
+      <p style="margin:0">Call me to get started <strong>+31 6 460 955 69</strong></p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container" aria-labelledby="contact-title">
+    <h2 class="section-title" id="contact-title">Say Hello</h2>
+    <form onsubmit="event.preventDefault(); alert('Thanks! Replace this with your form handler.');" style="display:grid; gap:12px; max-width:640px">
+      <label>Naam<br><input required name="name" class="input" placeholder="Jouw naam" /></label>
+      <label>E-mail<br><input required type="email" name="email" class="input" placeholder="jij@bedrijf.nl" /></label>
+      <label>Bericht<br><textarea name="message" class="input" rows="5" placeholder="Vertel kort waar ik mee kan helpen…"></textarea></label>
+      <button class="cta" type="submit" style="justify-self:start">Versturen</button>
+    </form>
+  </section>
+
+  <!-- Password gate modal -->
+  <div class="gate-overlay" id="gateOverlay" aria-hidden="true">
+    <div class="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+      <h3 id="gateTitle">Beschermde case</h3>
+      <p>Voer het wachtwoord in om <span id="gateCase">deze case</span> te bekijken.</p>
+      <div class="row">
+        <input type="password" id="gateInput" placeholder="Wachtwoord" autocomplete="current-password" />
+        <span class="error" id="gateError">Onjuist wachtwoord</span>
+      </div>
+      <div class="actions">
+        <button class="btn" id="gateCancel">Annuleren</button>
+        <button class="btn primary" id="gateSubmit">Openen</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="container">
+    <p>Digital Strategy & Human First Design</p>
+    <p>Lbrty is geregistreerd in het handelsregister in Amsterdam onder nummer 83049126</p>
+  </footer>
+
+  <style>
+    .input { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.12); background: #121216; color: var(--text); }
+    .input:focus { outline: 2px solid color-mix(in oklab, var(--accent) 50%, white 0%); border-color: transparent; }
+  </style>
+
+  <script>
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+
+    // Lottie bootstrapping — looks for elements with [data-lottie]
+    (function(){
+      if (!window.lottie) return; // CDN not loaded yet
+      document.querySelectorAll('[data-lottie]').forEach((el) => {
+        const path = el.getAttribute('data-lottie');
+        try {
+          window.lottie.loadAnimation({
+            container: el,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path
+          });
+        } catch (e) { console.warn('Lottie failed', e); }
+      });
+    })();
+      // Scroll-driven marquee with inertial continuation (no autoplay)
+    (function(){
+      const marquee = document.querySelector('.logos-marquee');
+      const railA = document.querySelector('.logos-marquee .railA');
+      const railB = document.querySelector('.logos-marquee .railB');
+      if (!marquee || !railA || !railB) return;
+
+      railB.innerHTML = railA.innerHTML; // duplicate for seamless loop
+
+      let railWidth = 1; // avoid divide-by-zero
+      const scrollFactor = 0.35; // px horizontal per 1px vertical scroll OR wheel deltaY unit
+      const dampingPerSecond = 0.88; // slightly snappier glide
+
+      function measure(){
+        // Use scrollWidth for robustness (works even with flex children)
+        railWidth = Math.max(1, railA.scrollWidth);
+        railA.style.transform = 'translate3d(0,0,0)';
+        railB.style.transform = `translate3d(${railWidth}px,0,0)`;
+      }
+
+      // Re-measure when images load (SVG/PNG)
+      railA.querySelectorAll('img').forEach(img => {
+        if (img.complete) return;
+        img.addEventListener('load', measure, { once: true });
+        img.addEventListener('error', measure, { once: true });
+      });
+
+      let lastScrollY = window.scrollY;
+      let velocity = 0; // horizontal px/sec
+      let position = 0; // horizontal px
+      let lastTs = performance.now();
+      let pendingImpulse = 0; // from wheel/touch when page has no scroll room
+
+      window.addEventListener('wheel', (e)=>{
+        pendingImpulse += e.deltaY * scrollFactor;
+      }, { passive: true });
+
+      let touchY = null;
+      marquee.addEventListener('touchstart', (e)=>{ if (e.touches && e.touches[0]) touchY = e.touches[0].clientY; }, { passive: true });
+      marquee.addEventListener('touchmove', (e)=>{
+        if (touchY == null) return;
+        const y = e.touches[0].clientY;
+        const dy = touchY - y;
+        touchY = y;
+        pendingImpulse += dy * scrollFactor;
+      }, { passive: true });
+      marquee.addEventListener('touchend', ()=>{ touchY = null; }, { passive: true });
+
+      function frame(now){
+        const dt = Math.min(0.05, (now - lastTs) / 1000); // seconds, clamp 50ms
+        lastTs = now;
+
+        const sy = window.scrollY;
+        const dy = sy - lastScrollY;
+        lastScrollY = sy;
+
+        const dtNorm = Math.max(dt, 1/120);
+        velocity += ((dy * scrollFactor) + pendingImpulse) / dtNorm;
+        pendingImpulse = 0;
+
+        const damp = Math.pow(dampingPerSecond, dt);
+        velocity *= damp;
+
+        position += velocity * dt;
+
+        const mod = railWidth || 1;
+        let x = ((position % mod) + mod) % mod;
+        railA.style.transform = `translate3d(${-x}px,0,0)`;
+        railB.style.transform = `translate3d(${mod - x}px,0,0)`;
+
+        requestAnimationFrame(frame);
+      }
+
+      const ro = new ResizeObserver(()=>{ measure(); });
+      ro.observe(railA); ro.observe(marquee);
+      window.addEventListener('resize', measure);
+      window.addEventListener('load', measure);
+
+      measure();
+      requestAnimationFrame(frame);
+    })(); = 0; // where we want to be
+      let current = 0; // where we are (smoothed)
+      let t = 0;       // autoplay accumulator
+      let lastScrollY = window.scrollY;
+      let lastTs = performance.now();
+
+      function frame(now){
+        const dt = Math.min(0.05, (now - lastTs) / 1000); // clamp to 50ms
+        lastTs = now;
+
+        const sy = window.scrollY;
+        const scrolled = Math.abs(sy - lastScrollY) > 0.1;
+        lastScrollY = sy;
+
+        // desired position from scroll
+        target = sy * scrollFactor;
+
+        // fallback autoplay if not enough scroll or preview has no scroll room
+        const noRoomToScroll = document.body.scrollHeight <= window.innerHeight + 1;
+        if (!prefersReduce && (noRoomToScroll || !scrolled)) {
+          t += autoplayPxPerSec * dt;
+          target += t;
+        }
+
+        // ease current toward target
+        current += (target - current) * ease;
+
+        // wrap via modulo
+        const mod = railWidth || 1;
+        let x = ((current % mod) + mod) % mod;
+        railA.style.transform = `translate3d(${-x}px,0,0)`;
+        railB.style.transform = `translate3d(${mod - x}px,0,0)`;
+
+        requestAnimationFrame(frame);
+      }
+
+      const ro = new ResizeObserver(()=>{ measure(); });
+      ro.observe(railA); ro.observe(marquee);
+      window.addEventListener('resize', measure);
+
+      measure();
+      requestAnimationFrame(frame);
+    })();
+      // Password gate logic (client-side). For real security, use a server check.
+    (function(){
+      const PASSWORD_HASH = '14fa72fc709c2dbee61e6b42a3b9d0421f92d3e966366d8c049c6a01f853ead7'; // sha256('lbrty2025!')
+      const overlay = document.getElementById('gateOverlay');
+      const input = document.getElementById('gateInput');
+      const error = document.getElementById('gateError');
+      const btnOpen = document.getElementById('gateSubmit');
+      const btnCancel = document.getElementById('gateCancel');
+      const caseSpan = document.getElementById('gateCase');
+      let pendingHref = null;
+
+      async function sha256Hex(text){
+        const data = new TextEncoder().encode(text);
+        const hash = await crypto.subtle.digest('SHA-256', data);
+        return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('');
+      }
+
+      function openGate(title, href){
+        pendingHref = href;
+        caseSpan.textContent = title;
+        error.style.display = 'none';
+        input.value = '';
+        overlay.style.display = 'flex';
+        requestAnimationFrame(()=> input.focus());
+      }
+      function closeGate(){ overlay.style.display = 'none'; pendingHref = null; }
+
+      document.querySelectorAll('.protected-link').forEach(a=>{
+        a.addEventListener('click', (e)=>{
+          e.preventDefault();
+          const title = a.getAttribute('data-title') || 'deze case';
+          const href = a.getAttribute('href');
+          if (sessionStorage.getItem('caseGateOk') === '1') { window.location.href = href; return; }
+          openGate(title, href);
+        });
+      });
+
+      btnCancel.addEventListener('click', closeGate);
+      overlay.addEventListener('click', (e)=>{ if (e.target === overlay) closeGate(); });
+      input.addEventListener('keydown', (e)=>{ if (e.key === 'Enter') btnOpen.click(); });
+      btnOpen.addEventListener('click', async ()=>{
+        const hash = await sha256Hex(input.value);
+        if (hash === PASSWORD_HASH){
+          sessionStorage.setItem('caseGateOk','1');
+          const href = pendingHref; closeGate(); window.location.href = href;
+        } else {
+          error.style.display = 'block';
+          input.select();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
