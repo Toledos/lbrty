@@ -31,6 +31,16 @@ header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(150%) blur(8
 .menu a{opacity:.9}
 .menu .cta{padding:8px 12px; border-radius:10px; border:1px solid rgba(255,255,255,.16)}
 
+.logo {
+  width: 48px;
+  height: 48px;
+  background-image: url('lbrty_logo.svg'); /* Pas dit pad aan naar jouw logo */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+
 /* Hero */
 .hero .hero-content{padding:40px 0 10px}
 .big{font-size:clamp(32px,6.2vw,60px);line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
