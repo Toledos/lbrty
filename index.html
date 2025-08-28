@@ -166,3 +166,233 @@
     </div>
   </div>
 </section>
+
+<!-- Password gate modal -->
+  <div class="gate-overlay" id="gateOverlay" aria-hidden="true">
+    <div class="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+      <h3 id="gateTitle">Beschermde case</h3>
+      <p>Voer het wachtwoord in om <span id="gateCase">deze case</span> te bekijken.</p>
+      <div class="row">
+        <input type="password" id="gateInput" placeholder="Wachtwoord" autocomplete="current-password" />
+        <span class="error" id="gateError">Onjuist wachtwoord</span>
+      </div>
+      <div class="actions">
+        <button class="btn" id="gateCancel">Annuleren</button>
+        <button class="btn primary" id="gateSubmit">Openen</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="container">
+    <p>Digital Strategy & Human First Design</p>
+    <p>Lbrty is geregistreerd in het handelsregister in Amsterdam onder nummer 83049126</p>
+  </footer>
+
+  <style>
+    .input { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.12); background: #121216; color: var(--text); }
+    .input:focus { outline: 2px solid color-mix(in oklab, var(--accent) 50%, white 0%); border-color: transparent; }
+  </style>
+
+  <script>
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+
+    // Lottie bootstrapping — looks for elements with [data-lottie]
+    (function(){
+      if (!window.lottie) return; // CDN not loaded yet
+      document.querySelectorAll('[data-lottie]').forEach((el) => {
+        const path = el.getAttribute('data-lottie');
+        try {
+          window.lottie.loadAnimation({
+            container: el,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path
+          });
+        } catch (e) { console.warn('Lottie failed', e); }
+      });
+    })();
+      // Scroll-driven marquee with inertial continuation (no autoplay)
+    (function(){
+      const marquee = document.querySelector('.logos-marquee');
+      const railA = document.querySelector('.logos-marquee .railA');
+      const railB = document.querySelector('.logos-marquee .railB');
+      if (!marquee || !railA || !railB) return;
+
+      railB.innerHTML = railA.innerHTML; // duplicate for seamless loop
+
+      let railWidth = 1; // avoid divide-by-zero
+      const scrollFactor = 0.35; // px horizontal per 1px vertical scroll OR wheel deltaY unit
+      const dampingPerSecond = 0.88; // slightly snappier glide
+
+      function measure(){
+        // Use scrollWidth for robustness (works even with flex children)
+        railWidth = Math.max(1, railA.scrollWidth);
+        railA.style.transform = 'translate3d(0,0,0)';
+        railB.style.transform = `translate3d(${railWidth}px,0,0)`;
+      }
+
+      // Re-measure when images load (SVG/PNG)
+      railA.querySelectorAll('img').forEach(img => {
+        if (img.complete) return;
+        img.addEventListener('load', measure, { once: true });
+        img.addEventListener('error', measure, { once: true });
+      });
+
+      let lastScrollY = window.scrollY;
+      let velocity = 0; // horizontal px/sec
+      let position = 0; // horizontal px
+      let lastTs = performance.now();
+      let pendingImpulse = 0; // from wheel/touch when page has no scroll room
+
+      window.addEventListener('wheel', (e)=>{
+        pendingImpulse += e.deltaY * scrollFactor;
+      }, { passive: true });
+
+      let touchY = null;
+      marquee.addEventListener('touchstart', (e)=>{ if (e.touches && e.touches[0]) touchY = e.touches[0].clientY; }, { passive: true });
+      marquee.addEventListener('touchmove', (e)=>{
+        if (touchY == null) return;
+        const y = e.touches[0].clientY;
+        const dy = touchY - y;
+        touchY = y;
+        pendingImpulse += dy * scrollFactor;
+      }, { passive: true });
+      marquee.addEventListener('touchend', ()=>{ touchY = null; }, { passive: true });
+
+      function frame(now){
+        const dt = Math.min(0.05, (now - lastTs) / 1000); // seconds, clamp 50ms
+        lastTs = now;
+
+        const sy = window.scrollY;
+        const dy = sy - lastScrollY;
+        lastScrollY = sy;
+
+        const dtNorm = Math.max(dt, 1/120);
+        velocity += ((dy * scrollFactor) + pendingImpulse) / dtNorm;
+        pendingImpulse = 0;
+
+        const damp = Math.pow(dampingPerSecond, dt);
+        velocity *= damp;
+
+        position += velocity * dt;
+
+        const mod = railWidth || 1;
+        let x = ((position % mod) + mod) % mod;
+        railA.style.transform = `translate3d(${-x}px,0,0)`;
+        railB.style.transform = `translate3d(${mod - x}px,0,0)`;
+
+        requestAnimationFrame(frame);
+      }
+
+      const ro = new ResizeObserver(()=>{ measure(); });
+      ro.observe(railA); ro.observe(marquee);
+      window.addEventListener('resize', measure);
+      window.addEventListener('load', measure);
+
+      measure();
+      requestAnimationFrame(frame);
+    })(); = 0; // where we want to be
+      let current = 0; // where we are (smoothed)
+      let t = 0;       // autoplay accumulator
+      let lastScrollY = window.scrollY;
+      let lastTs = performance.now();
+
+      function frame(now){
+        const dt = Math.min(0.05, (now - lastTs) / 1000); // clamp to 50ms
+        lastTs = now;
+
+        const sy = window.scrollY;
+        const scrolled = Math.abs(sy - lastScrollY) > 0.1;
+        lastScrollY = sy;
+
+        // desired position from scroll
+        target = sy * scrollFactor;
+
+        // fallback autoplay if not enough scroll or preview has no scroll room
+        const noRoomToScroll = document.body.scrollHeight <= window.innerHeight + 1;
+        if (!prefersReduce && (noRoomToScroll || !scrolled)) {
+          t += autoplayPxPerSec * dt;
+          target += t;
+        }
+
+        // ease current toward target
+        current += (target - current) * ease;
+
+        // wrap via modulo
+        const mod = railWidth || 1;
+        let x = ((current % mod) + mod) % mod;
+        railA.style.transform = `translate3d(${-x}px,0,0)`;
+        railB.style.transform = `translate3d(${mod - x}px,0,0)`;
+
+        requestAnimationFrame(frame);
+      }
+
+      const ro = new ResizeObserver(()=>{ measure(); });
+      ro.observe(railA); ro.observe(marquee);
+      window.addEventListener('resize', measure);
+
+      measure();
+      requestAnimationFrame(frame);
+    })();
+      // Password gate logic (client-side). For real security, use a server check.
+    (function(){
+      const PASSWORD_HASH = '14fa72fc709c2dbee61e6b42a3b9d0421f92d3e966366d8c049c6a01f853ead7'; // sha256('lbrty2025!')
+      const overlay = document.getElementById('gateOverlay');
+      const input = document.getElementById('gateInput');
+      const error = document.getElementById('gateError');
+      const btnOpen = document.getElementById('gateSubmit');
+      const btnCancel = document.getElementById('gateCancel');
+      const caseSpan = document.getElementById('gateCase');
+      let pendingHref = null;
+
+      async function sha256Hex(text){
+        const data = new TextEncoder().encode(text);
+        const hash = await crypto.subtle.digest('SHA-256', data);
+        return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('');
+      }
+
+      function openGate(title, href){
+        pendingHref = href;
+        caseSpan.textContent = title;
+        error.style.display = 'none';
+        input.value = '';
+        overlay.style.display = 'flex';
+        requestAnimationFrame(()=> input.focus());
+      }
+      function closeGate(){ overlay.style.display = 'none'; pendingHref = null; }
+
+      document.querySelectorAll('.protected-link').forEach(a=>{
+        a.addEventListener('click', (e)=>{
+          e.preventDefault();
+          const title = a.getAttribute('data-title') || 'deze case';
+          const href = a.getAttribute('href');
+          if (sessionStorage.getItem('caseGateOk') === '1') { window.location.href = href; return; }
+          openGate(title, href);
+        });
+      });
+
+      btnCancel.addEventListener('click', closeGate);
+      overlay.addEventListener('click', (e)=>{ if (e.target === overlay) closeGate(); });
+      input.addEventListener('keydown', (e)=>{ if (e.key === 'Enter') btnOpen.click(); });
+      btnOpen.addEventListener('click', async ()=>{
+        const hash = await sha256Hex(input.value);
+        if (hash === PASSWORD_HASH){
+          sessionStorage.setItem('caseGateOk','1');
+          const href = pendingHref; closeGate(); window.location.href = href;
+        } else {
+          error.style.display = 'block';
+          input.select();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
+
