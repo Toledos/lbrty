@@ -6,17 +6,15 @@
   <title>Lbrty — Digital Strategy & Human First Design</title>
   <meta name="description" content="I help companies define and design liberating digital products. Stefano Toledo — Product Designer." />
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="assets/favicon.png">
   <script defer src="https://unpkg.com/lottie-web/build/player/lottie.min.js"></script>
 </head>
 <body>
-   <div class="background-image" aria-hidden="true"></div>
+
   <!-- Header -->
   <header>
     <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <a href="#top" aria-label="Lbrty — home"></a>
-      </div>
+      <a class="brand" href="#top" aria-label="Lbrty — home"><span class="logo" aria-hidden="true"></span></a>
       <nav class="menu" aria-label="Hoofdmenu">
         <a href="#about">About me</a>
         <a href="#work">Proof of work</a>
@@ -28,11 +26,11 @@
 
   <!-- Hero -->
   <main id="top" class="hero">
-    <div class="container hero-content">
+    <div id="about" class="container hero-content">
       <div>
         <div class="badge"><span class="dot"></span> Available for new UX design inquiries</div>
         <h1 class="big">I help companies define and design liberating digital products</h1>
-        <p class="sub">Stefano Toledo — <strong>Product Designer</strong></p>
+        <div class="hero-person"><img src="assets/portrait.png" width="80" height="80" alt="Stefano Toledo"><p class="sub">Stefano Toledo<br>Product Designer</p></div>
       </div>
     </div>
     <!-- Fullwidth Lottie directly under the hero text -->
@@ -46,18 +44,14 @@
     </div>
     <div class="logos-marquee" aria-label="Partner logos">
       <div class="rail railA">
-        <div class="logo-pill"><img alt="logo 1" src="assets/logos/logo1.svg"></div>
-        <div class="logo-pill"><img alt="logo 2" src="assets/logos/logo2.svg"></div>
-        <div class="logo-pill"><img alt="logo 3" src="assets/logos/logo3.svg"></div>
-        <div class="logo-pill"><img alt="logo 4" src="assets/logos/logo4.svg"></div>
-        <div class="logo-pill"><img alt="logo 5" src="assets/logos/logo5.svg"></div>
-        <div class="logo-pill"><img alt="logo 6" src="assets/logos/logo6.svg"></div>
-        <div class="logo-pill"><img alt="logo 7" src="assets/logos/logo7.svg"></div>
-        <div class="logo-pill"><img alt="logo 8" src="assets/logos/logo8.svg"></div>
-        <div class="logo-pill"><img alt="logo 9" src="assets/logos/logo9.svg"></div>
-        <div class="logo-pill"><img alt="logo 10" src="assets/logos/logo10.svg"></div>
-        <div class="logo-pill"><img alt="logo 11" src="assets/logos/logo11.svg"></div>
-        <div class="logo-pill"><img alt="logo 12" src="assets/logos/logo12.svg"></div>
+<div class="logo-pill"><img loading="lazy" alt="PwC" src="assets/logos/client-1.svg"></div>
+<div class="logo-pill"><img loading="lazy" alt="Amstel" src="assets/logos/client-2.svg"></div>
+<div class="logo-pill"><img loading="lazy" alt="Client logo" src="assets/logos/client-3.png"></div>
+<div class="logo-pill"><img loading="lazy" alt="Client logo" src="assets/logos/client-4.png"></div>
+<div class="logo-pill"><img loading="lazy" alt="Client logo" src="assets/logos/client-5.png"></div>
+<div class="logo-pill"><img loading="lazy" alt="IKEA" src="assets/logos/client-6.svg"></div>
+<div class="logo-pill"><img loading="lazy" alt="Client logo" src="assets/logos/client-7.png"></div>
+<div class="logo-pill"><img loading="lazy" alt="Client logo" src="assets/logos/client-8.png"></div>
       </div>
       <div class="rail railB" aria-hidden="true"></div>
     </div>
@@ -69,7 +63,6 @@
 
     <article class="work-grid">
       <a class="work-card protected-link" href="cases/spruit.html" data-title="Spruit">
-        <div class="thumb"><img src="assets/work/spruit.jpg" alt="Spruit case"></div>
         <div class="body">
           <h3>Spruit</h3>
           <p>Fresh baby and toddler meals as a subscription, delivered to your door</p>
@@ -78,7 +71,6 @@
       </a>
 
       <a class="work-card protected-link" href="cases/royal-flora-holland.html" data-title="Royal Flora Holland">
-        <div class="thumb"><img src="assets/work/rfh.jpg" alt="Royal Flora Holland case"></div>
         <div class="body">
           <h3>Royal Flora Holland</h3>
           <p>Creating customer journey insights and delivering digital consultancy</p>
@@ -87,7 +79,6 @@
       </a>
 
       <a class="work-card protected-link" href="cases/nefit-bosch.html" data-title="Nefit Bosch">
-        <div class="thumb"><img src="assets/work/nefit.jpg" alt="Nefit Bosch case"></div>
         <div class="body">
           <h3>Nefit Bosch</h3>
           <p>Where B2C & B2B come together for a sustainable future</p>
@@ -96,7 +87,6 @@
       </a>
 
       <a class="work-card protected-link" href="cases/gitp.html" data-title="GITP">
-        <div class="thumb"><img src="assets/work/gitp.jpg" alt="GITP case"></div>
         <div class="body">
           <h3>GITP</h3>
           <p>A website that promotes digital and personalized HR solutions</p>
@@ -105,7 +95,6 @@
       </a>
 
       <a class="work-card protected-link" href="cases/bna.html" data-title="BNA">
-        <div class="thumb"><img src="assets/work/bna.jpg" alt="BNA case"></div>
         <div class="body">
           <h3>BNA</h3>
           <p>Showcasing architecture with a smart member environment for sharing knowledge and creating connections</p>
@@ -153,7 +142,7 @@
         </div>
       </div>
       <div class="contact-media">
-        <img src="assets/contact.jpg" alt="Stefano Toledo" class="contact-image">
+        <img src="assets/contact.png" alt="Stefano Toledo" class="contact-image">
       </div>
     </div>
   </section>
