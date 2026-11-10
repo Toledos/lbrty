@@ -9,10 +9,25 @@
     "binding": "ASSETS",
     "run_worker_first": true
   },
-  "build": { "command": "node scripts/build.mjs" },
-  "ratelimits": [{
-    "name": "LOGIN_LIMITER",
-    "namespace_id": "1001",
-    "simple": { "limit": 5, "period": 60 }
-  }]
+  "build": {
+    "command": "node scripts/build.mjs"
+  },
+  "ratelimits": [
+    {
+      "name": "LOGIN_LIMITER",
+      "namespace_id": "1001",
+      "simple": {
+        "limit": 5,
+        "period": 60
+      }
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.1,
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.1
+    }
+  }
 }
