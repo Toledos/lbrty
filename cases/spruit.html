@@ -1,82 +1,53 @@
 <!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{CASE_TITLE}} — Case</title>
-  <meta name="description" content="Case study: {{CASE_TITLE}} — {{CASE_TAGLINE}}" />
-  <link rel="stylesheet" href="../assets/style.css">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Spruit — Lbrty case</title>
+ <meta name="description" content="Fresh baby and toddler meals as a subscription, delivered to your door">
+ <link rel="icon" href="../assets/favicon.png">
+ <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
-  <header>
-    <div class="container nav">
-      <a class="back" href="../index.html">← Terug naar home</a>
-      <a class="btn" href="#top">Top</a>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- Titel & tagline -->
-    <section>
-      <h1 class="title">{{CASE_TITLE}}</h1>
-      <p class="sub">{{CASE_TAGLINE}}</p>
-      <div class="hero-media card">
-        <!-- Verwissel voor video of Lottie render -->
-        <img src="../assets/work/{{CASE_SLUG}}-hero.jpg" alt="{{CASE_TITLE}} case hero" />
-      </div>
-    </section>
-
-    <!-- Tekst + projectgegevens -->
-    <section class="grid">
-      <article class="card" style="grid-column:span 8">
-        <h3>Uitdaging</h3>
-        <p class="muted">Schrijf hier in 3–5 regels de context en businessvraag.</p>
-        <h3 style="margin-top:18px">Aanpak</h3>
-        <p class="muted">Kernstappen (Discovery → Concept → Design → Validatie → Launch → Iteratie).</p>
-        <div class="kpis">
-          <div class="kpi"><b>+x%</b><br><span class="muted">Conversie</span></div>
-          <div class="kpi"><b>+y%</b><br><span class="muted">Retentie</span></div>
-          <div class="kpi"><b>+z</b><br><span class="muted">NPS</span></div>
-        </div>
-        <h3 style="margin-top:18px">Resultaat</h3>
-        <p class="muted">Samenvatting van impact, learnings en next steps.</p>
-      </article>
-      <aside class="card" style="grid-column:span 4">
-        <h3>Projectgegevens</h3>
-        <p class="muted"><strong>Rol:</strong> Product Designer<br>
-        <strong>Jaar:</strong> 2024–2025<br>
-        <strong>Services:</strong> UX, UI, prototyping, art direction<br>
-        <strong>Tools:</strong> Figma, Framer, GA4, Hotjar</p>
-      </aside>
-    </section>
-
-    <!-- Galerie -->
-    <section>
-      <div class="gallery">
-        <div class="g"><img src="../assets/work/{{CASE_SLUG}}-01.jpg" alt="{{CASE_TITLE}} screen 1" /></div>
-        <div class="g"><img src="../assets/work/{{CASE_SLUG}}-02.jpg" alt="{{CASE_TITLE}} screen 2" /></div>
-        <div class="g"><img src="../assets/work/{{CASE_SLUG}}-03.jpg" alt="{{CASE_TITLE}} screen 3" /></div>
-        <div class="g"><img src="../assets/work/{{CASE_SLUG}}-04.jpg" alt="{{CASE_TITLE}} screen 4" /></div>
-      </div>
-    </section>
-
-    <!-- Contact blok (boven nav) -->
-    <section class="contact container" style="text-align:center; padding:64px 0">
-      <h2>Start je project</h2>
-      <p class="sub">Vertel me kort wat je zoekt, dan plannen we samen een call in.</p>
-      <a href="mailto:info@lbrty.nl" class="btn primary">✉️ Mail me direct</a>
-    </section>
-
-    <!-- Nav -->
-    <section class="cta">
-      <a class="btn" href="{{PREV_SLUG}}.html">← Vorige case</a>
-      <a class="btn primary" href="../index.html#work">Terug naar overzicht</a>
-      <a class="btn" href="{{NEXT_SLUG}}.html">Volgende case →</a>
-    </section>
-  </main>
-
-  <footer class="container">
-    <p>© Lbrty — Digital Strategy & Human First Design</p>
-  </footer>
+<body class="case-page" id="top">
+ <header><div class="container nav">
+  <a class="back" href="../index.html#work">Terug naar overzicht</a>
+  <a class="brand" href="../index.html" aria-label="Lbrty — home"><span class="logo" aria-hidden="true"></span></a>
+ </div></header>
+ <main class="container case-main">
+  <section aria-labelledby="case-title">
+   <h1 class="title" id="case-title">Spruit</h1>
+   <p class="sub case-tagline">Fresh baby and toddler meals as a subscription, delivered to your door</p>
+   <div class="hero-media card"><img src="../assets/work/spruit-00.webp" alt="Spruit — projectontwerp" width="1600" height="1023" loading="eager"></div>
+  </section>
+  <section class="grid case-details" aria-label="Projectbeschrijving">
+   <article class="card case-story" style="grid-column:span 8">
+    <h2>Uitdaging</h2>
+    <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h2>Aanpak</h2>
+    <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h2>Resultaat</h2><p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+   </article>
+   <aside class="card case-facts" style="grid-column:span 4">
+    <h2>Projectgegevens</h2>
+    <p><strong>Opdrachtgever</strong><br>Spruit</p>
+    <h3>Services</h3><ul class="case-services"><li><img src="../assets/services/service-4.svg" width="40" height="40" alt="">Content Development</li><li><img src="../assets/services/service-3.svg" width="40" height="40" alt="">Visual Art Direction</li><li><img src="../assets/services/service-2.svg" width="40" height="40" alt="">UX Design</li><li><img src="../assets/services/service-1.svg" width="40" height="40" alt="">Strategy</li></ul>
+   </aside>
+  </section>
+  <section aria-label="Projectbeelden"><div class="gallery"><div class="g"><img src="../assets/work/spruit-01.webp" alt="Spruit — ontwerp 1" width="1120" height="1800" loading="lazy"></div><div class="g"><img src="../assets/work/spruit-02.webp" alt="Spruit — ontwerp 2" width="1120" height="1800" loading="lazy"></div></div></section>
+  <section class="contact container case-contact">
+   <h2>Start je project</h2>
+   <p class="sub">Vertel me kort wat je zoekt, dan plannen we samen een call in.</p>
+   <a href="mailto:info@lbrty.nl" class="text-link">Mail me direct</a>
+  </section>
+  <nav class="cta case-navigation" aria-label="Andere cases">
+   <a class="text-link" href="bna.html">Vorige case: BNA</a>
+   <a class="text-link" href="../index.html#work">Terug naar overzicht</a>
+   <a class="text-link" href="royal-flora-holland.html">Volgende case: Royal Flora Holland</a>
+  </nav>
+ </main>
+ <footer class="container">
+  <div class="footer-brand"><a href="../index.html" aria-label="Lbrty — home"><img src="../assets/lbrty_logo.svg" width="80" height="38" alt="Lbrty"></a><p>Digital Strategy &amp; Human First Design</p></div>
+  <p>Lbrty is geregistreerd in het handelsregister in Amsterdam onder nummer 83049126</p>
+ </footer>
 </body>
 </html>

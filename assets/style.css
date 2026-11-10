@@ -797,3 +797,30 @@ footer > p { text-align: center; }
 @media (max-width: 820px) {
   #contact.container { padding-inline: 20px; --contact-gutter: 20px; }
 }
+
+/* Case pages retain the Spruit template's story/sidebar/gallery structure. */
+.case-page .case-main { padding-bottom: 0; }
+.case-page .case-tagline { max-width: 950px; font-size: clamp(24px, 3vw, 38px); line-height: 1.25; }
+.case-page .hero-media { overflow: hidden; }
+.case-page .hero-media img { width: 100%; height: auto; }
+.case-details { align-items: start; }
+.case-story h2, .case-facts h2, .case-contact h2 { font-family: "filson-pro", Arial, sans-serif; font-size: clamp(26px, 3vw, 40px); font-weight: 300; line-height: 1.2; }
+.case-story h2 { margin: 40px 0 16px; }
+.case-story h2:first-child, .case-facts h2 { margin-top: 0; }
+.case-story p { max-width: 65ch; margin: 0 0 24px; }
+.case-facts { border-top: 1px solid var(--line); padding-top: 24px; }
+.case-facts h3 { font-size: 22px; font-weight: 400; }
+.case-services { list-style: none; margin: 0; padding: 0; }
+.case-services li { display: flex; align-items: center; gap: 14px; margin-block: 16px; }
+.case-services img { flex-shrink: 0; }
+.case-page .gallery { align-items: start; }
+.case-page .gallery .g:only-child { grid-column: 1 / -1; }
+.case-contact { text-align: center; padding: 64px 0; }
+.case-navigation { flex-wrap: wrap; align-items: center; }
+.case-navigation .text-link { margin-top: 0; }
+.case-page .back { color: var(--accent); text-decoration: underline; text-underline-offset: .25em; }
+@media(max-width:820px) {
+ .case-page .hero-media { max-height: none; overflow: visible; margin-bottom: 48px; }
+ .case-details { row-gap: 32px; }
+ .case-navigation { gap: 24px; align-items: flex-start; }
+}

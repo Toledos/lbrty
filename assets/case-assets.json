@@ -1,0 +1,86 @@
+[
+  {
+    "path": "assets/work/bna-00.webp",
+    "source": "https://cdn.prod.website-files.com/616eeb0e44273587c4801593/646faa28715bce51cdfca449_61ef01484e518078ce3c3d9a_bna-scherm2.png",
+    "width": 1600,
+    "height": 1023,
+    "bytes": 60952
+  },
+  {
+    "path": "assets/work/bna-01.webp",
+    "source": "https://cdn.prod.website-files.com/616eeb0e44273587c4801593/61ef008651d3cf2c153c9a5b_bna-screen1.png",
+    "width": 1120,
+    "height": 1800,
+    "bytes": 86562
+  },
+  {
+    "path": "assets/work/bna-02.webp",
+    "source": "https://cdn.prod.website-files.com/616eeb0e44273587c4801593/647396bebc189674cbc2b104_61ef01761d7ead5c15f09465_bna-scherm3-p-1080.png",
+    "width": 1080,
+    "height": 1736,
+    "bytes": 63056
+  },
+  {
+    "path": "assets/work/gitp-00.webp",
+    "source": "https://cdn.prod.website-files.com/616eeb0e44273587c4801593/646faa28080e747f5bf5cf24_61ef127e82c70dd8c3eb8155_gitp-datagraph.png",
+    "width": 1600,
+    "height": 1023,
+    "bytes": 26012
+  },
+  {
+    "path": "assets/work/gitp-01.webp",
+    "source": "https://cdn.prod.website-files.com/616eeb0e44273587c4801593/61ef1218a226c4eace646ed2_gitp-nav.png",
+    "width": 1120,
+    "height": 1800,
+    "bytes": 31658
+  },
+  {
+    "path": "assets/work/nefit-bosch-00.webp",
+    "source": "https://cdn.prod.website-files.com/616eeb0e44273587c4801593/646faa2967aa3e82ea127d07_61ef14a3ab6acc5665e13864_nefitbbosch-service.png",
+    "width": 1600,
+    "height": 1023,
+    "bytes": 42648
+  },
+  {
+    "path": "assets/work/nefit-bosch-01.webp",
+    "source": "https://cdn.prod.website-files.com/616eeb0e44273587c4801593/61ef14d6743f3b3e5e28128d_nefitbbosch-home.png",
+    "width": 1120,
+    "height": 1800,
+    "bytes": 51970
+  },
+  {
+    "path": "assets/work/nefit-bosch-02.webp",
+    "source": "https://cdn.prod.website-files.com/616eeb0e44273587c4801593/61ef1479a226c49d89648dc3_product-nefitbosch.png",
+    "width": 1120,
+    "height": 1800,
+    "bytes": 43174
+  },
+  {
+    "path": "assets/work/royal-flora-holland-00.webp",
+    "source": "https://cdn.prod.website-files.com/616eeb0e44273587c4801593/61ef1565f835f302bb3e1d88_RFH%20nav.png",
+    "width": 1120,
+    "height": 1800,
+    "bytes": 28076
+  },
+  {
+    "path": "assets/work/spruit-00.webp",
+    "source": "https://cdn.prod.website-files.com/616eeb0e44273587c4801593/646faa2911f45bad4b1a5b81_61ef1789bfd36c59e7ba7f58_spruit-bedankt.png",
+    "width": 1600,
+    "height": 1023,
+    "bytes": 25882
+  },
+  {
+    "path": "assets/work/spruit-01.webp",
+    "source": "https://cdn.prod.website-files.com/616eeb0e44273587c4801593/61ef1737f7553d233adb281c_spruit.png",
+    "width": 1120,
+    "height": 1800,
+    "bytes": 36730
+  },
+  {
+    "path": "assets/work/spruit-02.webp",
+    "source": "https://cdn.prod.website-files.com/616eeb0e44273587c4801593/61ef18b154385e7516253371_spruit-order.png",
+    "width": 1120,
+    "height": 1800,
+    "bytes": 44978
+  }
+]
