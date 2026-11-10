@@ -783,3 +783,6 @@ footer > p {
 @media (max-width: 820px) {
  .footer-brand, footer > p { padding-inline: 20px; }
 }
+
+footer > p { text-align: center; }
+.footer-brand { gap: 8px; }
