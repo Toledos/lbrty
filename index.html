@@ -147,19 +147,25 @@
   </section>
 
 
-  <!-- Password gate modal -->
+  <!-- Login appearance and copy from the production password page. -->
   <div class="gate-overlay" id="gateOverlay" aria-hidden="true">
+    <button type="button" class="gate-close" id="gateCancel" aria-label="Login sluiten">Sluiten</button>
     <div class="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
-      <h3 id="gateTitle">Beschermde case</h3>
-      <p>Voer het wachtwoord in om <span id="gateCase">deze case</span> te bekijken.</p>
+      <h2 id="gateTitle">Login</h2>
+      <span id="gateCase" hidden></span>
+      <label class="visually-hidden" for="gateInput">Password</label>
       <div class="row">
-        <input type="password" id="gateInput" placeholder="Wachtwoord" autocomplete="current-password" />
-        <span class="error" id="gateError">Onjuist wachtwoord</span>
+        <input type="password" id="gateInput" placeholder="Enter your password" autocomplete="current-password" maxlength="256" />
       </div>
       <div class="actions">
-        <button class="btn" id="gateCancel">Annuleren</button>
-        <button class="btn primary" id="gateSubmit">Openen</button>
+        <button type="button" class="btn primary" id="gateSubmit">Submit</button>
       </div>
+      <p class="error" id="gateError" role="alert">Incorrect password. Please try again.</p>
+    </div>
+    <div class="gate-inquiries">
+      <span class="gate-status" aria-hidden="true"></span>
+      <span>Check out my projects on request</span>
+      <a href="mailto:ask@lbrty.nl?subject=Hi!%20I%20want%20to%20check%20out%20your%20projects.">ask@lbrty.nl</a>
     </div>
   </div>
 
@@ -270,7 +276,7 @@
 
     // Client-side case gate.
     (() => {
-      const PASSWORD_HASH = '14fa72fc709c2dbee61e6b42a3b9d0421f92d3e966366d8c049c6a01f853ead7';
+      const PASSWORD_HASH = '0e07316e63c6c4c597ebc3721ee9a9cfb624584728401fc0a59323467295b561';
       const overlay = document.getElementById('gateOverlay');
       const input = document.getElementById('gateInput');
       const error = document.getElementById('gateError');
@@ -312,6 +318,9 @@
       });
 
       cancel.addEventListener('click', closeGate);
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && overlay.getAttribute('aria-hidden') === 'false') closeGate();
+      });
       overlay.addEventListener('click', event => {
         if (event.target === overlay) closeGate();
       });
