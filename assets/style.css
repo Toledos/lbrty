@@ -762,3 +762,5 @@ footer.container {
   #services.container,
   footer.container { padding-inline: 20px; }
 }
+
+#work { border-top: 1px solid #fff; }
