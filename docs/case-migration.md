@@ -9,3 +9,5 @@ Source limitations: all five live cases contain Lorem ipsum. Those existing sour
 assets/case-assets.json records downloaded image sources. Images are locally stored as optimized WebP files; layout dimensions are explicit. Identical duplicate hero backgrounds are not copied twice. The case services reuse the site's matching four illustrations.
 
 These pages were password protected on production. The repository and this static implementation are public, as was the original Spruit template. The existing homepage password dialog is unchanged and is not server-side access control. Migration is not a production deployment.
+
+English-language update: all live HTML copy, navigation, image descriptions and accessibility labels now use English, with lang="en". The production Lorem ipsum paragraphs are replaced by the neutral English placeholder “Further details about this project will be added soon.” No project facts are invented. Existing screenshots retain their original artwork.
