@@ -786,3 +786,14 @@ footer > p {
 
 footer > p { text-align: center; }
 .footer-brand { gap: 8px; }
+
+/* Extend only the contact photo to the left browser edge. */
+#contact.container {
+  width: 100%;
+  padding-inline: max(56px, calc((100% - var(--maxw)) / 2));
+  --contact-gutter: max(56px, calc((100vw - var(--maxw)) / 2));
+}
+.contact-media { margin-left: calc(-1 * var(--contact-gutter)); }
+@media (max-width: 820px) {
+  #contact.container { padding-inline: 20px; --contact-gutter: 20px; }
+}
