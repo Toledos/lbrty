@@ -54,5 +54,29 @@
   {
     "path": "assets/lottie/production.lottie",
     "source": "https://cdn.prod.website-files.com/616ec4a601d741ddf3f6d462/64a1545cd77174ac673f2874_preview%20animation-st.lottie"
+  },
+  {
+    "path": "assets/services/team.jpeg",
+    "source": "https://cdn.prod.website-files.com/616ec4a601d741ddf3f6d462/63ebd6b429ac3cb155119603_62Uxyuz0-p-1600.jpeg"
+  },
+  {
+    "path": "assets/services/service-1.svg",
+    "source": "https://www.lbrty.nl/",
+    "extraction": "MiroMiro inline SVG"
+  },
+  {
+    "path": "assets/services/service-2.svg",
+    "source": "https://www.lbrty.nl/",
+    "extraction": "MiroMiro inline SVG"
+  },
+  {
+    "path": "assets/services/service-3.svg",
+    "source": "https://www.lbrty.nl/",
+    "extraction": "MiroMiro inline SVG"
+  },
+  {
+    "path": "assets/services/service-4.svg",
+    "source": "https://www.lbrty.nl/",
+    "extraction": "MiroMiro inline SVG"
   }
 ]
