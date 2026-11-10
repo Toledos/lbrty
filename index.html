@@ -62,7 +62,7 @@
     <h2 class="section-title" id="work-title">Proof of work</h2>
 
     <article class="work-grid">
-      <a class="work-card protected-link" href="cases/spruit.html" data-title="Spruit">
+      <a class="work-card protected-link" href="/proof-of-work/spruit" data-title="Spruit">
         <div class="body">
           <h3>Spruit</h3>
           <p>Fresh baby and toddler meals as a subscription, delivered to your door</p>
@@ -70,7 +70,7 @@
         </div>
       </a>
 
-      <a class="work-card protected-link" href="cases/royal-flora-holland.html" data-title="Royal Flora Holland">
+      <a class="work-card protected-link" href="/proof-of-work/royal-floraholland" data-title="Royal Flora Holland">
         <div class="body">
           <h3>Royal Flora Holland</h3>
           <p>Creating customer journey insights and delivering digital consultancy</p>
@@ -78,7 +78,7 @@
         </div>
       </a>
 
-      <a class="work-card protected-link" href="cases/nefit-bosch.html" data-title="Nefit Bosch">
+      <a class="work-card protected-link" href="/proof-of-work/nefit-bosch" data-title="Nefit Bosch">
         <div class="body">
           <h3>Nefit Bosch</h3>
           <p>Where B2C & B2B come together for a sustainable future</p>
@@ -86,7 +86,7 @@
         </div>
       </a>
 
-      <a class="work-card protected-link" href="cases/gitp.html" data-title="GITP">
+      <a class="work-card protected-link" href="/proof-of-work/gitp" data-title="GITP">
         <div class="body">
           <h3>GITP</h3>
           <p>A website that promotes digital and personalized HR solutions</p>
@@ -94,7 +94,7 @@
         </div>
       </a>
 
-      <a class="work-card protected-link" href="cases/bna.html" data-title="BNA">
+      <a class="work-card protected-link" href="/proof-of-work/bna" data-title="BNA">
         <div class="body">
           <h3>BNA</h3>
           <p>Showcasing architecture with a smart member environment for sharing knowledge and creating connections</p>
@@ -136,7 +136,7 @@
         <h2 class="contact-title" id="contact-title">Want to create real value?</h2>
         <p class="contact-intro">Serving your customers in the most relevant and valuable way possible should be your ultimate goal. That’s also my view on great user experience: looking at a problem from an end-user’s perspective.</p>
         <div class="contact-actions">
-          <a class="text-link" href="mailto:info@lbrty.nl?subject=New%20project%20%E2%80%94%20via%20lbrty.nl">info@lbrty.nl</a>
+          <a class="text-link" href="mailto:ask@lbrty.nl?subject=New%20project%20%E2%80%94%20via%20lbrty.nl">ask@lbrty.nl</a>
           <a class="text-link" href="tel:+31646095569">+31 6 460 955 69</a>
         </div>
       </div>
@@ -152,7 +152,7 @@
     <button type="button" class="gate-close" id="gateCancel" aria-label="Close login">Close</button>
     <div class="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
       <h2 id="gateTitle">Login</h2>
-      <span id="gateCase" hidden></span>
+      <input type="hidden" id="gateNext" value="/proof-of-work/spruit">
       <label class="visually-hidden" for="gateInput">Password</label>
       <div class="row">
         <input type="password" id="gateInput" placeholder="Enter your password" autocomplete="current-password" maxlength="256" />
@@ -274,74 +274,9 @@
       items.forEach(item => observer.observe(item));
     })();
 
-    // Client-side case gate.
-    (() => {
-      const PASSWORD_HASH = '0e07316e63c6c4c597ebc3721ee9a9cfb624584728401fc0a59323467295b561';
-      const overlay = document.getElementById('gateOverlay');
-      const input = document.getElementById('gateInput');
-      const error = document.getElementById('gateError');
-      const submit = document.getElementById('gateSubmit');
-      const cancel = document.getElementById('gateCancel');
-      const caseName = document.getElementById('gateCase');
-      let pendingHref = '';
 
-      async function sha256Hex(value) {
-        const data = new TextEncoder().encode(value);
-        const hash = await crypto.subtle.digest('SHA-256', data);
-        return Array.from(new Uint8Array(hash), byte => byte.toString(16).padStart(2, '0')).join('');
-      }
-
-      function closeGate() {
-        overlay.style.display = 'none';
-        overlay.setAttribute('aria-hidden', 'true');
-        pendingHref = '';
-      }
-
-      document.addEventListener('click', (event) => {
-        const link = event.target.closest('.protected-link');
-        if (!link) return;
-        event.preventDefault();
-
-        const href = link.getAttribute('href');
-        if (sessionStorage.getItem('caseGateOk') === '1') {
-          window.location.href = href;
-          return;
-        }
-
-        pendingHref = href;
-        caseName.textContent = link.dataset.title || 'this case';
-        error.style.display = 'none';
-        input.value = '';
-        overlay.style.display = 'flex';
-        overlay.setAttribute('aria-hidden', 'false');
-        requestAnimationFrame(() => input.focus());
-      });
-
-      cancel.addEventListener('click', closeGate);
-      document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && overlay.getAttribute('aria-hidden') === 'false') closeGate();
-      });
-      overlay.addEventListener('click', event => {
-        if (event.target === overlay) closeGate();
-      });
-      input.addEventListener('keydown', event => {
-        if (event.key === 'Enter') submit.click();
-      });
-
-      submit.addEventListener('click', async () => {
-        if (await sha256Hex(input.value) !== PASSWORD_HASH) {
-          error.style.display = 'block';
-          input.select();
-          return;
-        }
-
-        sessionStorage.setItem('caseGateOk', '1');
-        const href = pendingHref;
-        closeGate();
-        window.location.href = href;
-      });
-    })();
   </script>
+  <script defer src="/assets/case-login.js"></script>
 </body>
 </html>
 

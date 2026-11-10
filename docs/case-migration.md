@@ -11,3 +11,5 @@ assets/case-assets.json records downloaded image sources. Images are locally sto
 These pages were password protected on production. The repository and this static implementation are public, as was the original Spruit template. The existing homepage password dialog is unchanged and is not server-side access control. Migration is not a production deployment.
 
 English-language update: all live HTML copy, navigation, image descriptions and accessibility labels now use English, with lang="en". The production Lorem ipsum paragraphs are replaced by the neutral English placeholder “Further details about this project will be added soon.” No project facts are invented. Existing screenshots retain their original artwork.
+
+Server-protection update: the deployment now targets Cloudflare Workers. Canonical production URLs and ask@lbrty.nl are used throughout. The Worker guards direct case URLs and case image requests; the former browser password hash/sessionStorage gate has been removed. Source case files are bundled into the Worker and excluded from public assets. See hosting.md for deployment, secrets and public-repository limitations.
