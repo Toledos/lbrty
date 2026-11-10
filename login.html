@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Login — Lbrty</title><link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/assets/style.css"><script defer src="/assets/case-login.js"></script></head><body class="login-page">
+  <!-- Login appearance and copy from the production password page. -->
+  <div class="gate-overlay" style="display:flex" id="gateOverlay" aria-hidden="false">
+    <button type="button" class="gate-close" id="gateCancel" aria-label="Close login">Close</button>
+    <div class="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+      <h2 id="gateTitle">Login</h2>
+      <input type="hidden" id="gateNext" value="{{NEXT}}">
+      <label class="visually-hidden" for="gateInput">Password</label>
+      <div class="row">
+        <input type="password" id="gateInput" placeholder="Enter your password" autocomplete="current-password" maxlength="256" />
+      </div>
+      <div class="actions">
+        <button type="button" class="btn primary" id="gateSubmit">Submit</button>
+      </div>
+      <p class="error" id="gateError" role="alert">Incorrect password. Please try again.</p>
+    </div>
+    <div class="gate-inquiries">
+      <span class="gate-status" aria-hidden="true"></span>
+      <span>Check out my projects on request</span>
+      <a href="mailto:ask@lbrty.nl?subject=Hi!%20I%20want%20to%20check%20out%20your%20projects.">ask@lbrty.nl</a>
+    </div>
+  </div>
+
+</body></html>

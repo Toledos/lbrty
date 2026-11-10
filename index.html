@@ -1,23 +1,21 @@
 <!doctype html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lbrty — Digital Strategy & Human First Design</title>
   <meta name="description" content="I help companies define and design liberating digital products. Stefano Toledo — Product Designer." />
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="assets/favicon.png">
   <script defer src="https://unpkg.com/lottie-web/build/player/lottie.min.js"></script>
 </head>
 <body>
-   <div class="background-image" aria-hidden="true"></div>
+
   <!-- Header -->
   <header>
     <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <a href="#top" aria-label="Lbrty — home"></a>
-      </div>
-      <nav class="menu" aria-label="Hoofdmenu">
+      <a class="brand" href="#top" aria-label="Lbrty — home"><span class="logo" aria-hidden="true"></span></a>
+      <nav class="menu" aria-label="Main navigation">
         <a href="#about">About me</a>
         <a href="#work">Proof of work</a>
         <a href="#services">What you’ll get</a>
@@ -28,11 +26,11 @@
 
   <!-- Hero -->
   <main id="top" class="hero">
-    <div class="container hero-content">
+    <div id="about" class="container hero-content">
       <div>
         <div class="badge"><span class="dot"></span> Available for new UX design inquiries</div>
         <h1 class="big">I help companies define and design liberating digital products</h1>
-        <p class="sub">Stefano Toledo — <strong>Product Designer</strong></p>
+        <div class="hero-person"><img src="assets/portrait.png" width="80" height="80" alt="Stefano Toledo"><p class="sub">Stefano Toledo<br>Product Designer</p></div>
       </div>
     </div>
     <!-- Fullwidth Lottie directly under the hero text -->
@@ -46,18 +44,14 @@
     </div>
     <div class="logos-marquee" aria-label="Partner logos">
       <div class="rail railA">
-        <div class="logo-pill"><img alt="logo 1" src="assets/logos/logo1.svg"></div>
-        <div class="logo-pill"><img alt="logo 2" src="assets/logos/logo2.svg"></div>
-        <div class="logo-pill"><img alt="logo 3" src="assets/logos/logo3.svg"></div>
-        <div class="logo-pill"><img alt="logo 4" src="assets/logos/logo4.svg"></div>
-        <div class="logo-pill"><img alt="logo 5" src="assets/logos/logo5.svg"></div>
-        <div class="logo-pill"><img alt="logo 6" src="assets/logos/logo6.svg"></div>
-        <div class="logo-pill"><img alt="logo 7" src="assets/logos/logo7.svg"></div>
-        <div class="logo-pill"><img alt="logo 8" src="assets/logos/logo8.svg"></div>
-        <div class="logo-pill"><img alt="logo 9" src="assets/logos/logo9.svg"></div>
-        <div class="logo-pill"><img alt="logo 10" src="assets/logos/logo10.svg"></div>
-        <div class="logo-pill"><img alt="logo 11" src="assets/logos/logo11.svg"></div>
-        <div class="logo-pill"><img alt="logo 12" src="assets/logos/logo12.svg"></div>
+<div class="logo-pill"><img loading="lazy" alt="PwC" src="assets/logos/client-1.svg"></div>
+<div class="logo-pill"><img loading="lazy" alt="Amstel" src="assets/logos/client-2.svg"></div>
+<div class="logo-pill"><img loading="lazy" alt="Client logo" src="assets/logos/client-3.png"></div>
+<div class="logo-pill"><img loading="lazy" alt="Client logo" src="assets/logos/client-4.png"></div>
+<div class="logo-pill"><img loading="lazy" alt="Client logo" src="assets/logos/client-5.png"></div>
+<div class="logo-pill"><img loading="lazy" alt="IKEA" src="assets/logos/client-6.svg"></div>
+<div class="logo-pill"><img loading="lazy" alt="Client logo" src="assets/logos/client-7.png"></div>
+<div class="logo-pill"><img loading="lazy" alt="Client logo" src="assets/logos/client-8.png"></div>
       </div>
       <div class="rail railB" aria-hidden="true"></div>
     </div>
@@ -68,48 +62,43 @@
     <h2 class="section-title" id="work-title">Proof of work</h2>
 
     <article class="work-grid">
-      <a class="work-card protected-link" href="cases/spruit.html" data-title="Spruit">
-        <div class="thumb"><img src="assets/work/spruit.jpg" alt="Spruit case"></div>
+      <a class="work-card protected-link" href="/proof-of-work/spruit" data-title="Spruit">
         <div class="body">
           <h3>Spruit</h3>
           <p>Fresh baby and toddler meals as a subscription, delivered to your door</p>
-          <span class="case-link">View case <span aria-hidden="true">↗</span></span>
+          <span class="case-link">View case</span>
         </div>
       </a>
 
-      <a class="work-card protected-link" href="cases/royal-flora-holland.html" data-title="Royal Flora Holland">
-        <div class="thumb"><img src="assets/work/rfh.jpg" alt="Royal Flora Holland case"></div>
+      <a class="work-card protected-link" href="/proof-of-work/royal-floraholland" data-title="Royal Flora Holland">
         <div class="body">
           <h3>Royal Flora Holland</h3>
           <p>Creating customer journey insights and delivering digital consultancy</p>
-          <span class="case-link">View case <span aria-hidden="true">↗</span></span>
+          <span class="case-link">View case</span>
         </div>
       </a>
 
-      <a class="work-card protected-link" href="cases/nefit-bosch.html" data-title="Nefit Bosch">
-        <div class="thumb"><img src="assets/work/nefit.jpg" alt="Nefit Bosch case"></div>
+      <a class="work-card protected-link" href="/proof-of-work/nefit-bosch" data-title="Nefit Bosch">
         <div class="body">
           <h3>Nefit Bosch</h3>
           <p>Where B2C & B2B come together for a sustainable future</p>
-          <span class="case-link">View case <span aria-hidden="true">↗</span></span>
+          <span class="case-link">View case</span>
         </div>
       </a>
 
-      <a class="work-card protected-link" href="cases/gitp.html" data-title="GITP">
-        <div class="thumb"><img src="assets/work/gitp.jpg" alt="GITP case"></div>
+      <a class="work-card protected-link" href="/proof-of-work/gitp" data-title="GITP">
         <div class="body">
           <h3>GITP</h3>
           <p>A website that promotes digital and personalized HR solutions</p>
-          <span class="case-link">View case <span aria-hidden="true">↗</span></span>
+          <span class="case-link">View case</span>
         </div>
       </a>
 
-      <a class="work-card protected-link" href="cases/bna.html" data-title="BNA">
-        <div class="thumb"><img src="assets/work/bna.jpg" alt="BNA case"></div>
+      <a class="work-card protected-link" href="/proof-of-work/bna" data-title="BNA">
         <div class="body">
           <h3>BNA</h3>
           <p>Showcasing architecture with a smart member environment for sharing knowledge and creating connections</p>
-          <span class="case-link">View case <span aria-hidden="true">↗</span></span>
+          <span class="case-link">View case</span>
         </div>
       </a>
     </article>
@@ -117,24 +106,24 @@
 
 <!-- Services / process -->
   <section id="services" class="container section-space" aria-labelledby="services-title">
-    <div class="section-kicker">How I work</div>
     <h2 class="section-title" id="services-title">What you’ll get</h2>
+    <img class="services-photo" src="assets/services/team.jpeg" alt="Working together on digital products" loading="lazy">
 
     <div class="services-list">
       <article class="service-row">
-        <span class="service-number">01</span>
+        <img class="service-icon" src="assets/services/service-1.svg" alt="" width="112" height="112" loading="lazy">
         <div><h3>Digital Strategy</h3><p>Clear & measurable goals via an agile approach</p></div>
       </article>
       <article class="service-row">
-        <span class="service-number">02</span>
+        <img class="service-icon" src="assets/services/service-2.svg" alt="" width="112" height="112" loading="lazy">
         <div><h3>User Centered Design</h3><p>Functional & easy to use interfaces aligned with business requirements</p></div>
       </article>
       <article class="service-row">
-        <span class="service-number">03</span>
+        <img class="service-icon" src="assets/services/service-3.svg" alt="" width="112" height="112" loading="lazy">
         <div><h3>Visual Art Direction</h3><p>Unique & creative design to set you apart from your competition</p></div>
       </article>
       <article class="service-row">
-        <span class="service-number">04</span>
+        <img class="service-icon" src="assets/services/service-4.svg" alt="" width="112" height="112" loading="lazy">
         <div><h3>Content Development</h3><p>The right type of content to engage your target group</p></div>
       </article>
     </div>
@@ -144,40 +133,47 @@
   <section id="contact" class="container contact-section section-space" aria-labelledby="contact-title">
     <div class="contact-grid">
       <div class="contact-copy">
-        <div class="section-kicker">Let’s work together</div>
         <h2 class="contact-title" id="contact-title">Want to create real value?</h2>
         <p class="contact-intro">Serving your customers in the most relevant and valuable way possible should be your ultimate goal. That’s also my view on great user experience: looking at a problem from an end-user’s perspective.</p>
         <div class="contact-actions">
-          <a class="text-link" href="mailto:info@lbrty.nl?subject=Nieuw%20project%20%E2%80%94%20via%20lbrty.nl">info@lbrty.nl <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="tel:+31646095569">+31 6 460 955 69 <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="mailto:ask@lbrty.nl?subject=New%20project%20%E2%80%94%20via%20lbrty.nl">ask@lbrty.nl</a>
+          <a class="text-link" href="tel:+31646095569">+31 6 460 955 69</a>
         </div>
       </div>
       <div class="contact-media">
-        <img src="assets/contact.jpg" alt="Stefano Toledo" class="contact-image">
+        <img src="assets/contact.png" alt="Stefano Toledo" class="contact-image">
       </div>
     </div>
   </section>
 
 
-  <!-- Password gate modal -->
+  <!-- Login appearance and copy from the production password page. -->
   <div class="gate-overlay" id="gateOverlay" aria-hidden="true">
+    <button type="button" class="gate-close" id="gateCancel" aria-label="Close login">Close</button>
     <div class="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
-      <h3 id="gateTitle">Beschermde case</h3>
-      <p>Voer het wachtwoord in om <span id="gateCase">deze case</span> te bekijken.</p>
+      <h2 id="gateTitle">Login</h2>
+      <input type="hidden" id="gateNext" value="/proof-of-work/spruit">
+      <label class="visually-hidden" for="gateInput">Password</label>
       <div class="row">
-        <input type="password" id="gateInput" placeholder="Wachtwoord" autocomplete="current-password" />
-        <span class="error" id="gateError">Onjuist wachtwoord</span>
+        <input type="password" id="gateInput" placeholder="Enter your password" autocomplete="current-password" maxlength="256" />
       </div>
       <div class="actions">
-        <button class="btn" id="gateCancel">Annuleren</button>
-        <button class="btn primary" id="gateSubmit">Openen</button>
+        <button type="button" class="btn primary" id="gateSubmit">Submit</button>
       </div>
+      <p class="error" id="gateError" role="alert">Incorrect password. Please try again.</p>
+    </div>
+    <div class="gate-inquiries">
+      <span class="gate-status" aria-hidden="true"></span>
+      <span>Check out my projects on request</span>
+      <a href="mailto:ask@lbrty.nl?subject=Hi!%20I%20want%20to%20check%20out%20your%20projects.">ask@lbrty.nl</a>
     </div>
   </div>
 
   <footer class="container">
+    <div class="footer-brand"><a href="#top" aria-label="Lbrty — back to top"><img src="assets/lbrty_logo.svg" width="80" height="38" alt="Lbrty"></a>
     <p>Digital Strategy & Human First Design</p>
-    <p>Lbrty is geregistreerd in het handelsregister in Amsterdam onder nummer 83049126</p>
+    </div>
+    <p>Lbrty is registered in the trade register in Amsterdam under number 83049126</p>
   </footer>
   <script>
     // Smooth anchors
@@ -214,16 +210,16 @@
       if (!marquee || !railA || !railB) return;
 
       railB.innerHTML = railA.innerHTML;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
       let railWidth = 1;
       let lastScrollY = window.scrollY;
       let velocity = 0;
       let position = 0;
       let lastTime = performance.now();
-      let wheelImpulse = 0;
 
-      const factor = 0.28;
-      const damping = 0.075;
+      const factor = 0.06;
+      const damping = 0.18;
 
       const measure = () => {
         railWidth = Math.max(1, railA.scrollWidth);
@@ -233,9 +229,6 @@
         if (!image.complete) image.addEventListener('load', measure, { once: true });
       });
 
-      window.addEventListener('wheel', (event) => {
-        wheelImpulse += event.deltaY * factor;
-      }, { passive: true });
 
       function animate(time) {
         const dt = Math.min(32, time - lastTime) / 16.667;
@@ -245,8 +238,7 @@
         const scrollDelta = scrollY - lastScrollY;
         lastScrollY = scrollY;
 
-        velocity += scrollDelta * factor + wheelImpulse;
-        wheelImpulse = 0;
+        velocity += Math.max(-40, Math.min(40, scrollDelta)) * factor;
         velocity *= Math.pow(1 - damping, dt);
         position += velocity * dt;
 
@@ -282,71 +274,9 @@
       items.forEach(item => observer.observe(item));
     })();
 
-    // Client-side case gate.
-    (() => {
-      const PASSWORD_HASH = '14fa72fc709c2dbee61e6b42a3b9d0421f92d3e966366d8c049c6a01f853ead7';
-      const overlay = document.getElementById('gateOverlay');
-      const input = document.getElementById('gateInput');
-      const error = document.getElementById('gateError');
-      const submit = document.getElementById('gateSubmit');
-      const cancel = document.getElementById('gateCancel');
-      const caseName = document.getElementById('gateCase');
-      let pendingHref = '';
 
-      async function sha256Hex(value) {
-        const data = new TextEncoder().encode(value);
-        const hash = await crypto.subtle.digest('SHA-256', data);
-        return Array.from(new Uint8Array(hash), byte => byte.toString(16).padStart(2, '0')).join('');
-      }
-
-      function closeGate() {
-        overlay.style.display = 'none';
-        overlay.setAttribute('aria-hidden', 'true');
-        pendingHref = '';
-      }
-
-      document.addEventListener('click', (event) => {
-        const link = event.target.closest('.protected-link');
-        if (!link) return;
-        event.preventDefault();
-
-        const href = link.getAttribute('href');
-        if (sessionStorage.getItem('caseGateOk') === '1') {
-          window.location.href = href;
-          return;
-        }
-
-        pendingHref = href;
-        caseName.textContent = link.dataset.title || 'deze case';
-        error.style.display = 'none';
-        input.value = '';
-        overlay.style.display = 'flex';
-        overlay.setAttribute('aria-hidden', 'false');
-        requestAnimationFrame(() => input.focus());
-      });
-
-      cancel.addEventListener('click', closeGate);
-      overlay.addEventListener('click', event => {
-        if (event.target === overlay) closeGate();
-      });
-      input.addEventListener('keydown', event => {
-        if (event.key === 'Enter') submit.click();
-      });
-
-      submit.addEventListener('click', async () => {
-        if (await sha256Hex(input.value) !== PASSWORD_HASH) {
-          error.style.display = 'block';
-          input.select();
-          return;
-        }
-
-        sessionStorage.setItem('caseGateOk', '1');
-        const href = pendingHref;
-        closeGate();
-        window.location.href = href;
-      });
-    })();
   </script>
+  <script defer src="/assets/case-login.js"></script>
 </body>
 </html>
 
